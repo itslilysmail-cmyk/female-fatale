@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Elite&family=Reenie+Beanie&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --app-bg-image: url("/background.png");
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-typewriter: "Special Elite", monospace;
+  --font-hand: "Reenie Beanie", cursive;
+
+  --color-noir-black: #f4eee0; /* Lighter, cleaner bone/parchment */
+  --color-noir-ash: #e6dfcf;   /* Muted shadow parchment */
+  --color-noir-mist: #4a3f35;  /* Darker, more defined ink */
+  --color-noir-paper: #1a1a1a; /* Pure deep charcoal */
+  --color-noir-blood: #af0000; /* More vibrant, striking crimson */
+  --color-noir-ink: #000000;   /* Absolute black */
+}
+
+@layer base {
+  body {
+    @apply text-noir-paper font-sans selection:bg-noir-blood selection:text-white overflow-x-hidden antialiased min-h-screen;
+    background: transparent; 
+    position: relative;
+  }
+
+  /* The actual uploaded background image - MUST BE VISIBLE */
+  body::before {
+    content: "";
+    @apply fixed inset-0 z-[-10] pointer-events-none;
+    background-image: var(--app-bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* The thematic parchment veil layer - STRONGER to protect readability */
+  body::after {
+    content: "";
+    @apply fixed inset-0 z-[-8] pointer-events-none;
+    background-color: rgba(244, 238, 224, 0.75); /* Using the lighter bone color for the veil */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 1; 
+    mix-blend-mode: normal; 
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .texture-overlay {
+    @apply fixed inset-0 pointer-events-none z-[-1] opacity-[0.08] mix-blend-multiply;
+    background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
+  }
+
+  /* Atmospheric Vignette Overlay */
+  .vignette {
+    @apply fixed inset-0 pointer-events-none z-[-2];
+    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(60, 50, 40, 0.4) 100%);
+  }
+
+  .smudge-bg {
+    @apply fixed inset-0 pointer-events-none z-[-2] opacity-40;
+    background-image: radial-gradient(circle at 20% 30%, rgba(212, 199, 175, 0.5) 0%, transparent 40%),
+                      radial-gradient(circle at 80% 70%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+  }
+
+  .atmos-glow {
+    @apply fixed inset-0 pointer-events-none z-[-2] opacity-10 blur-[120px] transition-opacity duration-1000;
+    background: radial-gradient(circle at 30% 20%, #8b0000 0%, transparent 40%),
+                radial-gradient(circle at 70% 80%, #6b5e52 0%, transparent 50%);
+  }
+
+  /* Dossier / Archive Styles */
+  .dossier-border {
+    @apply border-2 border-noir-paper/20 relative;
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.1),
+      -1px -1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .paper-texture {
+    @apply relative overflow-hidden bg-noir-ash/40;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23f)' opacity='.15'/%3E%3C/svg%3E");
+  }
+
+  .annotation {
+    @apply font-hand text-noir-blood text-2xl leading-none -rotate-2 opacity-70;
+  }
+
+  .circle-mark {
+    @apply absolute border-2 border-noir-blood/30 rounded-[40%_60%_70%_30%/50%_40%_60%_50%] rotate-3 pointer-events-none;
+  }
+
+  .strikethrough {
+    @apply relative inline-block;
+  }
+  .strikethrough::after {
+    content: "";
+    @apply absolute left-0 top-1/2 w-full h-[2px] bg-noir-blood/50 -rotate-1 origin-left;
+  }
+
+  .marker-highlight {
+    @apply relative z-0;
+  }
+  .marker-highlight::before {
+    content: "";
+    @apply absolute -inset-1 bg-noir-blood/10 -rotate-1 -z-10 mix-blend-multiply transition-colors;
+    clip-path: polygon(2% 15%, 98% 5%, 96% 85%, 4% 95%);
+  }
+
+  .veil-drape {
+    @apply absolute inset-0 pointer-events-none z-[-2] opacity-50 mix-blend-multiply;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.9) 100%);
+  }
+
+  .confidential-stamp {
+    @apply border-4 border-noir-blood/60 text-noir-blood/60 px-6 py-2 font-typewriter font-bold uppercase rotate-[-12deg] inline-block mix-blend-overlay scale-110;
+  }
+
+  /* Styled scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-noir-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-noir-ash border border-noir-paper/5;
+  }
+}
+
+/* Custom transitions */
+.fade-enter { opacity: 0; }
+.fade-enter-active { opacity: 1; transition: opacity 1000ms ease-in; }
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed;
+}
+
