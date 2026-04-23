@@ -28,7 +28,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       className="max-w-2xl mx-auto"
     >
       {/* Dossier Header for Question */}
-      <div className="mb-12 relative p-8 paper-texture dossier-border">
+      <div className="mb-6 md:mb-12 relative p-4 md:p-8 paper-texture dossier-border">
         {question.chapter && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -91,7 +91,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             variants={{
               hover: { x: 10 }
             }}
-            className="group w-full text-left p-6 border border-noir-paper/20 bg-noir-black/95 hover:bg-noir-blood/10 hover:border-noir-blood transition-all flex items-center gap-6 relative overflow-hidden shadow-sm"
+            className="group w-full text-left p-4 md:p-6 border border-noir-paper/20 bg-noir-black/95 hover:bg-noir-blood/10 hover:border-noir-blood transition-all flex items-center gap-4 md:gap-6 relative overflow-hidden shadow-sm"
           >
             <div className="w-8 h-8 md:w-10 md:h-10 shrink-0 flex items-center justify-center border border-noir-paper/10 text-noir-mist group-hover:border-noir-blood group-hover:text-noir-blood font-hand text-xl md:text-2xl transition-all relative">
               {String.fromCharCode(65 + idx)}

@@ -154,7 +154,7 @@ export default function App() {
         
         {/* SHARED HEADER (Limited visibility in Result/Quiz for focus) */}
         {view !== 'opening' && view !== 'transition' && (
-          <header className="p-8 flex justify-between items-start border-b border-noir-paper/5 relative">
+          <header className="p-4 md:p-8 flex justify-between items-start border-b border-noir-paper/5 relative">
             <div className="flex flex-col gap-1">
               <span className="font-typewriter text-[10px] tracking-[0.2em] opacity-40 uppercase">Bureau of Psychological Deviance</span>
               <span className="font-mono text-[9px] tracking-[0.2em] opacity-30 uppercase">Confidential Manuscript // No. 9172-B</span>
@@ -176,7 +176,7 @@ export default function App() {
             {view === 'intro' && (
               <motion.div
                 key="intro"
-                className="flex-grow flex flex-col items-center justify-center p-6 px-24 text-center relative overflow-hidden"
+                className="flex-grow flex flex-col items-center justify-center p-6 lg:px-24 text-center relative overflow-hidden"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
@@ -244,10 +244,10 @@ export default function App() {
                   <div className="absolute inset-0 bg-noir-blood opacity-[0.02] blur-3xl pointer-events-none" />
                   
                   {[
-                    { src: '/c6f0d73e-147b-496e-8d58-771ce1ad4053.png', rotate: -6, x: -80, y: 0, z: 10, label: 'FILE-REF-X01' },
-                    { src: '/c66733ed-82fc-4bed-88f9-831fa7c1f7af.png', rotate: 4, x: 60, y: 20, z: 20, label: 'FILE-REF-X02' },
-                    { src: '/cd85db8a-3cbb-4fe7-9a47-e3d8aa716af3.png', rotate: -2, x: 0, y: -40, z: 30, scale: 1.1, label: 'PRIMARY-SUBJECT' },
-                    { src: '/97a7ca15-d6eb-423e-b473-f6d188ff96a4.png', rotate: 8, x: -60, y: 60, z: 15, label: 'FIELD-DATA-009' }
+                    { src: '/images/intro/intro-1.png', rotate: -6, x: -80, y: 0, z: 10, label: 'FILE-REF-X01' },
+                    { src: '/images/evidence/power-seeker-2.png', rotate: 4, x: 60, y: 20, z: 20, label: 'FILE-REF-X02' },
+                    { src: '/images/intro/intro-3.png', rotate: -2, x: 0, y: -40, z: 30, scale: 1.1, label: 'PRIMARY-SUBJECT' },
+                    { src: '/images/intro/intro-4.png', rotate: 8, x: -60, y: 60, z: 15, label: 'FIELD-DATA-009' }
                   ].map((asset, i) => (
                     <motion.div 
                       key={i}
@@ -346,7 +346,7 @@ export default function App() {
             )}
 
             {view === 'quiz' && (
-              <div key="quiz" className="flex-grow flex flex-col justify-center p-6 py-12">
+              <div key="quiz" className="flex-grow flex flex-col justify-center p-4 md:p-6 py-8 md:py-12">
                 <QuestionCard
                   question={QUESTIONS[currentQuestion]}
                   currentStep={currentQuestion + 1}
@@ -365,7 +365,7 @@ export default function App() {
 
         {/* SHARED FOOTER */}
         {view !== 'opening' && view !== 'transition' && (
-          <footer className="p-8 flex flex-col md:flex-row justify-between items-end border-t border-noir-paper/10 gap-8">
+          <footer className="p-4 md:p-8 flex flex-col md:flex-row justify-between items-end border-t border-noir-paper/10 gap-8">
             <div className="w-full md:w-1/3 flex flex-col gap-2">
               <div className="flex gap-4">
                 <div className="w-1 h-1 bg-noir-blood"></div>

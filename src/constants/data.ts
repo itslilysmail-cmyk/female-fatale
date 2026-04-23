@@ -22,9 +22,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(26, 26, 26, 0.3)'
     },
     evidenceImages: [
-      '/a3f7bafa-f3b7-44b0-a19a-b03297933241.png',
-      '/c693f8c5-c354-4873-a07e-cacf8df48bb3.png',
-      '/476b822a-036b-44e7-9e6a-c93f33ff6061.png'
+      '/images/evidence/black-widow-1.png',
+      '/images/evidence/black-widow-2.png',
+      '/images/evidence/black-widow-3.png'
     ]
   },
   ANGEL_OF_DEATH: {
@@ -48,9 +48,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(175, 0, 0, 0.2)'
     },
     evidenceImages: [
-      '/a46e4a0a-af81-4112-840b-77ededa95bf6.png',
-      '/daff5d57-ae93-4a42-b155-5a7468e60fe4.png',
-      '/67492a56-5cbd-4a68-8e24-decef8955562.png'
+      '/images/evidence/angel-of-death-1.png',
+      '/images/evidence/angel-of-death-2.png',
+      '/images/evidence/angel-of-death-3.png'
     ]
   },
   REVENGE_KILLER: {
@@ -73,9 +73,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(123, 0, 0, 0.3)'
     },
     evidenceImages: [
-      '/8cab639c-b816-4a58-88d9-11b6b15b70b4.png',
-      '/37a52787-2b3c-4ac6-86a1-20aa4cf620b6.png',
-      '/f3cec753-cf46-48e6-b09c-dad14309ef37.png'
+      '/images/evidence/revenge-killer-1.png',
+      '/images/evidence/revenge-killer-2.png',
+      '/images/evidence/revenge-killer-3.png'
     ]
   },
   POWER_SEEKER: {
@@ -98,9 +98,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(93, 109, 49, 0.3)'
     },
     evidenceImages: [
-      '/ab985865-3b37-41b4-bc88-e55b12660121.png',
-      '/c66733ed-82fc-4bed-88f9-831fa7c1f7af.png',
-      '/7069025f-554c-4ebb-8abd-1a51468bc501.png'
+      '/images/evidence/power-seeker-1.png',
+      '/images/evidence/power-seeker-2.png',
+      '/images/evidence/power-seeker-3.png'
     ]
   },
   CULT_FOLLOWER: {
@@ -123,9 +123,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(74, 61, 84, 0.3)'
     },
     evidenceImages: [
-      '/be686f3d-3162-493a-873e-3c908464190e.png',
-      '/e77205a3-c454-488d-b6ef-daa059067809.png',
-      '/689ef5ba-2f15-4e5e-a5d0-462911c7f831.png'
+      '/images/evidence/cult-follower-1.png',
+      '/images/evidence/cult-follower-2.png',
+      '/images/evidence/cult-follower-3.png'
     ]
   },
   PREDATOR: {
@@ -148,9 +148,9 @@ export const PROTOTYPES: Record<string, Prototype> = {
       muted: 'rgba(44, 62, 80, 0.3)'
     },
     evidenceImages: [
-      '/bf499697-f871-4c7a-9666-6f53e9c0c777.png',
-      '/f0653af8-128e-4d68-833a-cf150f2531f5.png',
-      '/2261ca0e-7646-4a6f-8418-3b7f8e1e11cc.png'
+      '/images/evidence/predator-1.png',
+      '/images/evidence/predator-2.png',
+      '/images/evidence/predator-3.png'
     ]
   }
 };
@@ -159,7 +159,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 1,
     chapter: "CHAPTER I: THE THRESHOLD / 阈限",
-    chapterImage: "/136f37c8-0f67-46fa-944a-07dc66334298.png",
+    chapterImage: "/images/chapters/chapter-1.png",
     text: "一位陌生人递给你一封封好的信。火漆依然温热。你的直觉是...",
     options: [
       { text: "保留封印；在看内容前先看来源。", scores: { BLACK_WIDOW: 2, POWER_SEEKER: 1 } },
@@ -188,7 +188,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 4,
     chapter: "CHAPTER II: THE INNER ROOM / 暗房",
-    chapterImage: "/241aab65-cf7d-4d82-926f-bb00cb7702ac.png",
+    chapterImage: "/images/chapters/chapter-2.png",
     text: "你理想的工作空间是...",
     options: [
       { text: "一个凌乱的档案馆，闻起来有旧墨水和秘密的味道。", scores: { CULT_FOLLOWER: 2, BLACK_WIDOW: 1 } },
@@ -217,7 +217,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 7,
     chapter: "CHAPTER III: THE HARVEST / 获益",
-    chapterImage: "/871e0d58-e724-4be8-9dc7-933d7ca66039.png",
+    chapterImage: "/images/chapters/chapter-3.png",
     text: "财富是...",
     options: [
       { text: "隔绝后果的终极绝缘体。", scores: { POWER_SEEKER: 3, BLACK_WIDOW: 1 } },
@@ -246,7 +246,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 10,
     chapter: "CHAPTER IV: THE DEBT / 债",
-    chapterImage: "/8e1b581e-9845-4809-8de0-9a001ae3fdd1.png",
+    chapterImage: "/images/chapters/chapter-4.png",
     text: "如果你能见证历史上的一个瞬间，那将是...",
     options: [
       { text: "死刑执行令签署的圆点处。", scores: { POWER_SEEKER: 3, REVENGE_KILLER: 1 } },
@@ -275,7 +275,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 13,
     chapter: "CHAPTER V: THE SILENCE / 寂静",
-    chapterImage: "/a8a746b8-9c31-4328-8fe4-3226facaebad-1.png",
+    chapterImage: "/images/chapters/chapter-5.png",
     text: "秘密是...",
     options: [
       { text: "货币。你只在价格合适时支付。", scores: { BLACK_WIDOW: 3, POWER_SEEKER: 1 } },
@@ -304,7 +304,7 @@ export const QUESTIONS: Question[] = [
   {
     id: 16,
     chapter: "CHAPTER VI: THE ARCHIVE / 归档",
-    chapterImage: "/e9a4d06a-8725-4ccd-925e-fb096a372f82-1.png",
+    chapterImage: "/images/chapters/chapter-6.png",
     text: "今晚的月亮是...",
     options: [
       { text: "为你表演准备的聚光灯。", scores: { POWER_SEEKER: 2, BLACK_WIDOW: 1 } },

@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --app-bg-image: url("/background.png");
+  --app-bg-image: url("/images/background.png");
 }
 
 @theme {

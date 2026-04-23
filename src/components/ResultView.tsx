@@ -28,7 +28,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
     >
       {/* Dossier Card Container */}
       <motion.div 
-        className="relative mb-12 p-10 border border-noir-paper/10 shadow-2xl overflow-hidden group/dossier paper-texture dossier-border" 
+        className="relative mb-8 md:mb-12 p-6 md:p-10 border border-noir-paper/10 shadow-2xl overflow-hidden group/dossier paper-texture dossier-border" 
         style={{ backgroundColor: prototype.theme.bg }}
         whileHover="hover"
       >
@@ -158,7 +158,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
         </div>
 
         {/* Content Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-start relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start relative z-10">
           <div className="space-y-10">
             <section className="relative">
               <h3 className="font-typewriter text-[11px] text-noir-mist uppercase tracking-[0.3em] mb-4 border-b pb-1 flex justify-between" style={{ borderColor: `${prototype.theme.accent}33` }}>
@@ -175,7 +175,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
                 <FileText size={10} style={{ color: prototype.theme.accent }} />
                 Historical Subject / 对应案例: {prototype.characterName}
               </h3>
-              <div className="relative group/crime bg-noir-black/40 p-6 border-l-4 overflow-hidden" style={{ borderColor: prototype.theme.accent }}>
+              <div className="relative group/crime bg-noir-black/40 p-4 md:p-6 border-l-4 overflow-hidden" style={{ borderColor: prototype.theme.accent }}>
                 <div className="relative z-10">
                   <div className="font-typewriter text-[10px] opacity-40 mb-3 uppercase tracking-widest">
                     Period: {prototype.characterYears}
@@ -192,7 +192,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
           </div>
 
           {/* Radar Chart Section */}
-          <div className="h-[320px] w-full bg-noir-ash/20 p-6 rounded-sm border border-noir-paper/10 shadow-inner">
+          <div className="h-[320px] w-full bg-noir-ash/20 p-4 md:p-6 rounded-sm border border-noir-paper/10 shadow-inner">
              <div className="font-typewriter text-[8px] text-noir-mist mb-2 uppercase text-right tracking-[0.5em]">Statistical Calibration</div>
             <ResponsiveContainer width="100%" height="90%">
               <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
@@ -214,7 +214,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
       {/* Secondary Info Section */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <motion.div 
-          className="p-8 border border-noir-paper/10 bg-noir-ash/30 paper-texture"
+          className="p-6 md:p-8 border border-noir-paper/10 bg-noir-ash/30 paper-texture"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6 }}
@@ -233,7 +233,7 @@ export const ResultView: React.FC<ResultViewProps> = ({ prototype, onRestart }) 
         </motion.div>
 
         <motion.div 
-          className="p-8 border border-noir-paper/10 bg-noir-ash/30 flex flex-col justify-center items-center text-center relative overflow-hidden"
+          className="p-6 md:p-8 border border-noir-paper/10 bg-noir-ash/30 flex flex-col justify-center items-center text-center relative overflow-hidden"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.7 }}
